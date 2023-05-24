@@ -20,29 +20,19 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-
-
 header {
-  min-height: 20vh !important;
   background-color: #957fca;
   box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.75);
 }
-
-main{
-  min-height: 70vh !important;
-}
-
-
-
 body {
-  background-color: #f8eaed;
+  background-color: #dbe1f6;
 }
 .inputBusqueda {
   height: 2.5rem;
   width: 30rem;
+  border: 1px solid #957fca;
 }
 
 .img-header {
@@ -54,7 +44,12 @@ body {
   font-size: 2rem;
   color: rgb(255, 254, 254);
 }
-.ancor-carrito{
+.lupa {
+  color: rgb(255, 254, 254);
+}
+
+.ancor-carrito,
+.ancor-shop {
   background-color: #6a5991;
   padding: 0;
   width: 3.5rem;
@@ -63,8 +58,25 @@ body {
 .ancor-carrito:hover,
 .btn:hover {
   background-color: #493e64;
+  color: white;
 }
-
+.lupa,
+.btn {
+  background-color: #957fca;
+}
+nav {
+  padding: 1rem;
+}
+nav a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: "Pangolin", cursive;
+  color: rgb(255, 255, 255);
+  background-color: #957fca;
+  padding: 0.5rem;
+  border-radius: 20px;
+}
+/* ancors nav */
 button {
   display: inline-block;
   border-radius: 4px;
@@ -88,7 +100,7 @@ button span {
 }
 
 button span:after {
-  content: "»";
+  content: "Â»";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -105,27 +117,8 @@ button:hover span:after {
   right: 0;
 }
 
-.lupa,
-.btn {
-  background-color: #f8cbeb;
-}
-nav {
-  padding: 1rem;
-  border-radius: 10px;
-}
-
-nav a {
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-family: "Pangolin", cursive;
-  color: rgb(255, 255, 255);
-  background-color: #957fca;
-  padding: 0.5rem;
-  border-radius: 20px;
-}
-
- /* Card juguetes y farmacia / */
- .card {
+/* Card juguetes y farmacia */
+.card {
   --font-color: #323232;
   --bg-color: #957fca;
   /*   #e0e0e0 */
@@ -149,7 +142,7 @@ nav a {
   --bg-color: #8572b3;
 }
 
-.cardimg {
+.card__img {
   width: 250px;
   height: 200px;
   object-fit: cover;
@@ -167,28 +160,28 @@ nav a {
   flex-direction: column;
 }
 
-.cardtitle {
+.card__title {
   color: white;
   text-align: center;
   font-weight: 900;
   font-size: 15px;
 }
 
-.cardlinks {
+.card__links {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
   align-self: flex-end;
 }
 
-.cardlinks .link {
+.card__links .link {
   color: var(--font-color);
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
 }
 
-.cardlinks .link:hover {
+.card__links .link:hover {
   text-decoration: underline;
 }
 
@@ -199,26 +192,20 @@ article div div > img {
   object-fit: cover;
 }
 
+/* CARROUSEL */
 .carousel-item img {
   width: 100% !important;
   height: 380px !important;
   object-fit: cover !important;
   object-position: center !important;
 }
-.carousel{
+.carousel {
   position: relative !important;
-  border-bottom: #704bc7 2px solid; 
+  border-bottom: #704bc7 2px solid;
 }
 
-.error404{
-  height: 20rem;
-  width: 20rem;
-}
-
-.div-img-404{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.logo-jugueteria {
+  margin-bottom: 1rem;
 }
 
 .bi-shop-window,
@@ -226,26 +213,16 @@ article div div > img {
   color: rgb(250, 250, 250);
 }
 
-.ancor-shop {
-  background-color: #6a5991;
-  padding: 0;
-  width: 3.5rem;
-  border-radius: 0.5rem;
-}
-
-.card-precio{
+.card-precio {
   color: white;
   font-weight: 700;
 }
 
-.btn:hover {
-  background-color: #493e64;
-  color: white;
-}
-.lupa,
-.btn {
-  color: white;
+footer {
   background-color: #957fca;
+  padding: 1rem;
+  margin-top: 5rem;
+  color: white;
 }
 
 .articulo-disponibles {
@@ -268,27 +245,14 @@ article div div > img {
   font-weight: 600;
 }
 
-footer {
-  min-height: 10vh;
-  font-family: "Pangolin", cursive;
-  font-size: 1.5rem;
-  min-height: 10vh;
-  background-color: #957fca;
-  border-top: #704bc7 5px double; 
-  color: white;
-}
-
-article{
-  margin: 2rem;
-}
-
+/* MEDIA QUERIES */
 @media only screen and (min-width: 320px) and (max-width: 576px) {
   .div-header,
   nav {
     display: flex;
     flex-direction: column;
   }
-  .logo-farmacia > img {
+  .logo-jugueteria > img {
     width: 320px !important;
   }
   footer {
