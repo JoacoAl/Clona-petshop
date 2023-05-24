@@ -15,26 +15,30 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../style/style.css" />
-    <title>Document</title>
+    <link rel="shortcut icon" href="../image/favicon1.png" type="image/x-icon">
+    <title>farmacia</title>
   </head>
   <body>
-<div class="layout" id="app">
+<div class="layout" >
   <header class="p-2">
     <div class="d-flex justify-content-around align-items-center">
       <a class="ancor-logo" href=""
         ><img src="../image/logo2.png" alt="" class="img-header"
       /></a>
-      <span class="d-flex">
-        <input
-          class="form-control me-2 inputBusqueda"
-          type="search"
-          placeholder="Buscar"
-          aria-label="Search"
-        />
-        <button class="btn lupa" type="submit">
-          <i class="bi bi-search"></i>
-        </button>
-      </span>
+      <nav class="d-flex justify-content-center gap-2">
+        <a href="../../index.html"><button>
+          <span>Inicio</span>
+        </button></a>
+        <a href=""><button>
+          <span>Contacto</span>
+        </button></a>
+        <a href=""><button>
+          <span>Farmacia</span>
+        </button></a>
+        <a href=""><button>
+          <span>Juguetes</span>
+        </button></a>
+      </nav>
       <a
         class="ancor-carrito d-flex justify-content-center"
         href="./details.html"
@@ -43,32 +47,110 @@
       ></a>
     </div>
   </header>
-  <main>
-    <nav class="d-flex justify-content-center gap-3">
-      <a href="/index.html">Inicio</a>
-      <a href="./contacto.html">Contacto</a>
-      <a href="#">Farmacia</a>
-      <a href="./juguetes.html">Juguetes</a>
-    </nav>
-
-    <div class="card">
-      <div class="card-img"></div>
-      <div class="card-info">
-        <p class="text-title">Product title </p>
-        <p class="text-body">Product description and details</p>
+  <!-- CARROUSEL -->
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="../image/Uno.jpg" class="d-block" alt="food">
       </div>
-      <div class="card-footer">
-      <span class="text-title">$499.49</span>
-      <div class="card-button">
-        <svg class="svg-icon" viewBox="0 0 20 20">
-          <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
-          <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
-          <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>
-        </svg>
+      <div class="carousel-item active">
+        <img src="../image/cuatroperroscarousel.jpg" class="d-block" alt="perro">
       </div>
-    </div></div>
+      <div class="carousel-item">
+        <img src="../image/pexels-cats-coming-3712095.jpg" class="d-block" alt="food">
+      </div>
+      <div class="carousel-item">
+        <img src="../image/perrosofacarousel.jpg" class="d-block" alt="food">
+      </div>
+      <div class="carousel-item">
+        <img src="../image/Dos.jpg" class="d-block" alt="food">
+      </div>
+      <div class="carousel-item">
+        <img src="../image/Tres.jpg" class="d-block" alt="food">
+      </div>
+      <div class="carousel-item">
+        <img src="../image/Cuatro.jpg" class="d-block" alt="food">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="logo-farmacia d-flex justify-content-center align-items-center m-3">
+  <img  src="../image/Farmacia.png" alt="">
+</div>
+  <main id="app">
+    <form  class="d-flex justify-content-center align-items-center m-3">
+      <input
+      class="form-control me-2 inputBusqueda"
+      type="search"
+      placeholder="Buscar"
+      aria-label="Search"
+      v-model="busqueda"
+      @input="filtrarPorTitulo"
+    />
+    
+      <button class="btn lupa" type="submit">
+        <i class="bi bi-search"></i>
+      </button>
+    </form >
+    <article class="d-flex flex-wrap gap-4 justify-content-center">
+      <div class="card" v-for="articulo of filtrarPorTitulo()">
+      <div class="cardimg"><img v-bind:src="articulo.imagen" alt="" /></div>
+      <div class="card__descr-wrapper">
+        <p class="cardtitle">{{articulo.producto}}</p>
+        <div class="sinStock d-flex justify-content-center" v-if="articulo.disponibles == 0">
+          <p class="m-0 p-1">Sin stock!</p> 
+        </div>
+        <div class="articulo-disponibles d-flex justify-content-center" v-if="articulo.disponibles <= 5 && articulo.disponibles >= 1">
+          <p class="m-0 p-1">Ultimas unidades! </p>
+        </div>
+       
+        <div class="d-flex flex-row justify-content-between card-precio align-items-center">
+          <p class="m-0 card-precio">${{articulo.precio}}</p>
+          <span class="d-flex gap-1"> 
+            <a class="ancor-shop d-flex justify-content-center align-items-center" href="./details.html"><i class="bi bi-plus"></i></a>
+            <a class="ancor-shop d-flex justify-content-center align-items-center" href=""
+          >
+            <i class="bi bi-shop-window"></i>
+          </a></span>
 
+        </div>
+      </div>
+    </article>
+    <div class="div-img-404" v-if="!filtrarPorTitulo().length"><img class="error404" src="../image/404.jpg" alt=""></div>
   </main>
+  <footer class="footer d-flex align-items-center justify-content-between px-5">
+    <div class="redesSociales">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+        <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+        <path d="M16.5 7.5l0 .01" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+        <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+      </svg>
+      </svg>
+    </div>
+    <div class="nombres">
+      <h5>Joaquin® - Priscila® - Nicolas® - Lesthy® - Natalia®</h5>
+  </div>
+    <div class="cohort px-4 text-center">
+        <h3 class="text">Cohort 47</h3>
+    </div>
+  </footer>
 </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"crossorigin="anonymous"
