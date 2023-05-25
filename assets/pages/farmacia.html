@@ -110,11 +110,12 @@
         <div class="articulo-disponibles d-flex justify-content-center" v-if="articulo.disponibles <= 5 && articulo.disponibles >= 1">
           <p class="m-0 p-1">Ultimas unidades! </p>
         </div>
+      
        
         <div class="d-flex flex-row justify-content-between card-precio align-items-center">
           <p class="m-0 card-precio">${{articulo.precio}}</p>
           <span class="d-flex gap-1"> 
-            <a class="ancor-shop d-flex justify-content-center align-items-center" href="./details.html"><i class="bi bi-plus"></i></a>
+            <a class="ancor-shop d-flex justify-content-center align-items-center" v-bind:href="'./details.html?id='+ articulo._id"><i class="bi bi-plus"></i></a>
             <a class="ancor-shop d-flex justify-content-center align-items-center" href=""
           >
             <i class="bi bi-shop-window"></i>
