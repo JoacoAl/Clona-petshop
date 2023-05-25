@@ -381,3 +381,8 @@ textarea {
   transform: translateY(10px);
   transition: 100ms;
  }
+
+ .contador-suma{
+  width: 1rem;
+  height: 1rem;
+ }
