@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="shortcut icon" href="../image/favicon1.png" type="image/x-icon">
-    <title>farmacia</title>
+    <title>Clona PetShop | Farmacia</title>
   </head>
   <body>
 <div class="layout" >
@@ -84,7 +84,7 @@
 <div class="logo-farmacia d-flex justify-content-center align-items-center m-3">
   <img  src="../image/Farmacia.png" alt="">
 </div>
-  <main id="app">
+  <main id="app" class="main">
     <form  class="d-flex justify-content-center align-items-center m-3">
       <input
       class="form-control me-2 inputBusqueda"
@@ -116,7 +116,7 @@
             <a class="ancor-shop d-flex justify-content-center align-items-center" v-bind:href="'./details.html?id='+articulo._id"><i class="bi bi-plus"></i></a>
           
             <div class="ancor-shop d-flex justify-content-center align-items-center" href="" v-if="articulo.disponibles >= 1 & articulo.disponibles != 0">
-              <i :class="seleccionadas.some(e => e._id == allEvents._id) ? 'bi bi-shop-window bg-danger' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
+              <i :class="seleccionadas.some(e => e._id == articulo._id) ? 'bi bi-shop-window text-danger' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
             </div>
           </span>
         </div>

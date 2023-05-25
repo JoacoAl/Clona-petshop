@@ -40,8 +40,11 @@ body {
   background-color: #dbe1f6;
 }
 
-main {
+.main {
   min-height: 80vh !important;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
 }
 
 .inputBusqueda {
@@ -397,7 +400,7 @@ textarea {
   width: 100%;
 }
 .main-carrito {
-  min-height: 40vh !important;
+  min-height: 47.8vh !important;
 }
 .h2-carrito {
   font-weight: 600;
@@ -428,7 +431,10 @@ textarea {
 #button > p {
   margin: 0;
 }
-
+.btn-carrito {
+  text-decoration: none;
+  color: white;
+}
 /* MEDIA QUERIES */
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .img-header {
