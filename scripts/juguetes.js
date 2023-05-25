@@ -7,6 +7,7 @@ const app = createApp({
       jugueteria: [],
       busqueda: "",
       productosFiltrados: [],
+      seleccionadas: [],
     };
   },
   created() {
@@ -20,6 +21,28 @@ const app = createApp({
         );
         console.log(this.jugueteria);
       });
+  },
+  methods: {
+    filtrarPorTitulo() {
+      return this.farmacia.filter((e) =>
+        e.producto.toLowerCase().includes(this.busqueda.toLowerCase())
+      );
+    },
+    toggleSeleccion(_id) {
+      if (this.seleccionadas.find((e) => e._id == _id)) {
+        console.log("ya");
+        this.seleccionadas = this.seleccionadas.filter((e) => e._id != _id);
+      } else {
+        const aux = this.allEvents.find((e) => e._id == _id);
+        this.seleccionadas.push(aux);
+      }
+      const json = JSON.stringify(this.seleccionadas);
+      localStorage.setItem("compras", json);
+    },
+
+    getLocalStorage() {
+      return JSON.parse(localStorage.getItem("compras"));
+    },
   },
   computed: {
     filtrarPorTitulo() {

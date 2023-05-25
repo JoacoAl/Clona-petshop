@@ -15,50 +15,51 @@
             ><img src="../image/logo2.png" alt="" class="img-header"
           /></a>
           <nav class="d-flex justify-content-center gap-2">
-            <a href="../../index.html"><button>
+            <a class="button-nav" href="../../index.html"><button>
               <span>Inicio</span>
             </button></a>
-            <a href=""><button>
+            <a class="button-nav" href="./contacto.html"><button>
               <span>Contacto</span>
             </button></a>
-            <a href=""><button>
+            <a class="button-nav" href="./farmacia.html"><button>
               <span>Farmacia</span>
             </button></a>
-            <a href=""><button>
+            <a class="button-nav" href="./juguetes.html"><button>
               <span>Juguetes</span>
             </button></a>
           </nav>
           <a
             class="ancor-carrito d-flex justify-content-center"
-            href="./details.html"
+            href="#"
           >
             <i class="bi bi-cart4 carro"></i
           ></a>
         </div>
       </header>
-      <main id="app">
-        <h1 class="text-center">COMPRAS REALIZADAS</h1>
+      <div class="logo-farmacia d-flex justify-content-center align-items-center m-3">
+        <img src="../image/Carrito.png" alt="">
+      </div>
+      <main id="app" class="d-flex align-items-center main-carrito flex-column justify-content-between">
         <article class="d-flex flex-wrap gap-4 justify-content-center">
           <div class="card" v-if="seleccionadas.length > 0" v-for="articulo of seleccionadas">
             <div class="cardimg">
               <img v-bind:src="articulo.imagen" alt="" />
             </div>
             <div class="card__descr-wrapper">
-              <p class="cardtitle">{{articulo.producto}}</p>
+              <p class="card__title">{{articulo.producto}}</p>
               <div class="sinStock d-flex justify-content-center" v-if="articulo.disponibles == 0">
                 <p class="m-0 p-1">Sin stock!</p>
               </div>
               <div class="articulo-disponibles d-flex justify-content-center" v-if="articulo.disponibles <= 5 && articulo.disponibles >= 1">
                 <p class="m-0 p-1">Ultimas unidades!</p>
               </div>
-      
               <div class="d-flex flex-row justify-content-between card-precio align-items-center">
                 <p class="m-0 card-precio">${{articulo.precio}}</p>
                 <span class="d-flex gap-1">
-                  <div class="contador">
-                    <button class="contador-suma" @click="restar(articulo)" :disabled="articulo.__v === 0">-</button>
+                  <div class="contador d-flex align-items-center">
+                    <button id="button"  @click="restar(articulo)" :disabled="articulo.__v === 0"><p>-</p></button>
                     <span>{{ articulo.__v }}</span>
-                    <button class="contador-suma" @click="sumar(articulo)" :disabled="articulo.__v >= articulo.disponibles">+</button>
+                    <button id="button" @click="sumar(articulo)" :disabled="articulo.__v >= articulo.disponibles"><p>+</p></button>
                   </div>
                 </span>
               </div>
@@ -66,15 +67,15 @@
           </div>
         </article>
                 <div v-if="mostrarImagen && imagenBorrar == false">
-        <img src="../image/compra-exitosa.png" alt="">
+        <img class="imagenes-carrito" src="../image/compra-exitosa.png" alt="">
        </div>
-       <div v-if="seleccionadas == 0 && mostrarImagen == false && imagenBorrar == false">
-        <h2>aun no ha hecho ninguna seleccion </h2>
+       <div class="my-3 h2-carrito" v-if="seleccionadas == 0 && mostrarImagen == false && imagenBorrar == false">
+        <h2>¡Aun no has seleccionado ningun producto!</h2>
       </div>
       <div v-if="imagenBorrar && mostrarImagen == false">
-        <img src="/assets/image/cancelada.webp" alt="">
+        <img class="imagenes-carrito" src="/assets/image/cancelada.webp" alt="">
        </div>
-     <div class="div-comprar-btn" >
+     <div class="div-comprar-btn d-flex" >
       <button v-on:click="deleteCompras" class="comprar-btn">BORRAR</button>
       <button v-on:click="comprar" class="comprar-btn">COMPRAR</button>
      </div>
@@ -109,6 +110,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="/scripts/carrito.js"></script>
+    <script src="../../scripts/carrito.js"></script>
 </body>
 </html>
