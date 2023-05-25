@@ -34,6 +34,11 @@ header {
 body {
   background-color: #dbe1f6;
 }
+
+main{
+  min-height: 80vh !important;
+}
+
 .inputBusqueda {
   height: 2.5rem;
   width: 30rem;
@@ -342,7 +347,7 @@ textarea {
 
 .div-comprar-btn{
   display: flex;
-  justify-content: center;
+  justify-content: center ;
   align-items: center;
   margin-top: 2rem;
 }
@@ -353,7 +358,7 @@ textarea {
   padding: 17px 40px;
   border-radius: 50px;
   border: 0;
-  background-color: white;
+  background-color: rgb(118, 69, 69);
   box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
   letter-spacing: 1.5px;
   text-transform: uppercase;

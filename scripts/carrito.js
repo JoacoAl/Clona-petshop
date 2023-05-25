@@ -5,24 +5,26 @@ const app = createApp({
         return{
             allEvents: [],
             seleccionadas: [],
+            mostrarImagen: false,
+            imagenBorrar: false,
         }
     },
     created(){
-        fetch("https://mindhub-xj03.onrender.com/api/petshop")
-        .then((res) => res.json())
-        .then((data) => {
-          this.allEvents = data;
-        })
-        .catch((error) => console.error(error)); 
+        this.seleccionadas = JSON.parse(localStorage.getItem('compras')) ?? []
     },
     methods: {
-        toggleSeleccion(id){
-            if(this.seleccionadas.find(e => e._id == _id)){
-                console.log("ya esta")
-            }else{
-                const aux = this.allEvents.find(e => e._id == _id)
-                this.seleccionadas.push( aux )
-            }
+        comprar(){
+            localStorage.removeItem('compras')
+            this.seleccionadas = []
+            this.mostrarImagen = true
+        },
+        deleteCompras(){
+            localStorage.removeItem('compras')
+            this.seleccionadas = []
+            this.imagenBorrar = true
         }
     }
+
 })
+
+app.mount('#app')
