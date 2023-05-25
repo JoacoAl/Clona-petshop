@@ -41,7 +41,7 @@
       </nav>
       <a
         class="ancor-carrito d-flex justify-content-center"
-        href="./details.html"
+        href="../pages/carrito.html"
       >
         <i class="bi bi-cart4 carro"></i
       ></a>
@@ -115,15 +115,15 @@
           <p class="m-0 card-precio">${{articulo.precio}}</p>
           <span class="d-flex gap-1"> 
             <a class="ancor-shop d-flex justify-content-center align-items-center" href="./details.html"><i class="bi bi-plus"></i></a>
-            <a class="ancor-shop d-flex justify-content-center align-items-center" href=""
-          >
-            <i class="bi bi-shop-window"></i>
-          </a></span>
-
+          
+            <div class="ancor-shop d-flex justify-content-center align-items-center" href="" v-if="articulo.disponibles >= 1 & articulo.disponibles != 0">
+              <i :class="seleccionadas.some(e => e._id == allEvents._id) ? 'bi bi-shop-window bg-danger' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
+            </div>
+          </span>
         </div>
       </div>
+    </div>
     </article>
-    <div class="div-img-404" v-if="!filtrarPorTitulo().length"><img class="error404" src="../image/404.jpg" alt=""></div>
   </main>
   <footer class="footer d-flex align-items-center justify-content-between px-5">
     <div class="redesSociales">
