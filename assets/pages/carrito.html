@@ -67,7 +67,14 @@
             </div>
           </div>
         </article>
-                <div v-if="mostrarImagen && imagenBorrar == false">
+        <span v-show="resultado">
+          {{resultado}}
+        </span>
+        <div class="valor">
+          <h2>total a pagar: ${{totalCompra}}</h2>
+        </div>
+        
+      <div v-if="mostrarImagen && imagenBorrar == false">
         <img class="imagenes-carrito" src="../image/compra-exitosa.png" alt="">
        </div>
        <div class="my-3 h2-carrito" v-if="seleccionadas == 0 && mostrarImagen == false && imagenBorrar == false">
@@ -77,7 +84,7 @@
         <img class="imagenes-carrito" src="/assets/image/cancelada.webp" alt="">
        </div>
      <div class="div-comprar-btn d-flex" >
-      <button v-on:click="deleteCompras" class="comprar-btn">BORRAR</button>
+      <button v-on:click="deleteCompras" v-if="seleccionadas && !(seleccionadas == 0 && mostrarImagen == false && imagenBorrar == false)" class="comprar-btn">BORRAR</button>
       <button v-on:click="comprar" class="comprar-btn">COMPRAR</button>
      </div>
       </main>

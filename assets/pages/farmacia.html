@@ -116,7 +116,8 @@
             <a class="ancor-shop d-flex justify-content-center align-items-center" v-bind:href="'./details.html?id='+articulo._id"><i class="bi bi-plus"></i></a>
           
             <div class="ancor-shop d-flex justify-content-center align-items-center" href="" v-if="articulo.disponibles >= 1 & articulo.disponibles != 0">
-              <i :class="seleccionadas.some(e => e._id == allEvents._id) ? 'bi bi-shop-window bg-danger' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
+              <i :class="seleccionadas.some(e => e._id == articulo._id) ? 'bi bi-shop-window bg-danger' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
+
             </div>
           </span>
         </div>
