@@ -29,17 +29,17 @@
               <span>Inicio</span>
             </button></a
           >
-          <a href=""
+          <a href="./contacto.html"
             ><button>
               <span>Contacto</span>
             </button></a
           >
-          <a href=""
+          <a href="./farmacia.html"
             ><button>
               <span>Farmacia</span>
             </button></a
           >
-          <a href=""
+          <a href="#"
             ><button>
               <span>Juguetes</span>
             </button></a
@@ -147,7 +147,9 @@
           </div>
         </div>
       </article>
-      <h3 v-if="productosFiltrados.length == 0" >No hay resultados a tu busqueda</h3>
+      <div class="d-flex justify-content-center">
+        <h3 v-if="productosFiltrados.length == 0" class="h3-no-hay-resultados">No hay resultados a tu busqueda</h3>
+      </div>
       <footer class="footer d-flex align-items-center justify-content-between px-5">
         <div class="redesSociales">
           <a href="https://www.instagram.com"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
