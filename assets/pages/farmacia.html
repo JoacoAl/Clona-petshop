@@ -29,13 +29,13 @@
         <a href="../../index.html"><button>
           <span>Inicio</span>
         </button></a>
-        <a href=""><button>
+        <a href="./contacto.html"><button>
           <span>Contacto</span>
         </button></a>
-        <a href=""><button>
+        <a href="#"><button>
           <span>Farmacia</span>
         </button></a>
-        <a href=""><button>
+        <a href="./juguetes.html"><button>
           <span>Juguetes</span>
         </button></a>
       </nav>
@@ -99,22 +99,21 @@
         <i class="bi bi-search"></i>
       </button>
     </form >
-    <article class="d-flex flex-wrap gap-4 justify-content-center">
+    <article class="d-flex flex-wrap gap-4 justify-content-center my-3">
       <div class="card" v-for="articulo of filtrarPorTitulo()">
-      <div class="cardimg"><img v-bind:src="articulo.imagen" alt="" /></div>
+      <div class="card__img"><img v-bind:src="articulo.imagen" alt="" /></div>
       <div class="card__descr-wrapper">
-        <p class="cardtitle">{{articulo.producto}}</p>
+        <p class="card__title">{{articulo.producto}}</p>
         <div class="sinStock d-flex justify-content-center" v-if="articulo.disponibles == 0">
           <p class="m-0 p-1">Sin stock!</p> 
         </div>
         <div class="articulo-disponibles d-flex justify-content-center" v-if="articulo.disponibles <= 5 && articulo.disponibles >= 1">
           <p class="m-0 p-1">Ultimas unidades! </p>
         </div>
-       
         <div class="d-flex flex-row justify-content-between card-precio align-items-center">
           <p class="m-0 card-precio">${{articulo.precio}}</p>
           <span class="d-flex gap-1"> 
-            <a class="ancor-shop d-flex justify-content-center align-items-center" href="./details.html"><i class="bi bi-plus"></i></a>
+            <a class="ancor-shop d-flex justify-content-center align-items-center" v-bind:href="'./details.html?id='+articulo._id"><i class="bi bi-plus"></i></a>
           
             <div class="ancor-shop d-flex justify-content-center align-items-center" href="" v-if="articulo.disponibles >= 1 & articulo.disponibles != 0">
               <i :class="seleccionadas.some(e => e._id == allEvents._id) ? 'bi bi-shop-window bg-danger' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
@@ -124,6 +123,9 @@
       </div>
     </div>
     </article>
+    <div class="d-flex justify-content-center">
+      <h3 v-if="filtrarPorTitulo().length == 0" class="h3-no-hay-resultados">No hay resultados a tu busqueda</h3>
+    </div>
   </main>
   <footer class="footer d-flex align-items-center justify-content-between px-5">
     <div class="redesSociales">

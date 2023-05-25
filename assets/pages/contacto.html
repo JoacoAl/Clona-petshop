@@ -15,9 +15,9 @@
 
 <body>
   <header class="p-2">
-    <div class="d-flex justify-content-around align-items-center">
+    <div class=" navegador d-flex justify-content-around align-items-center flex-wrap">
       <a class="ancor-logo" href=""><img src="../image/logo2.png" alt="" class="img-header" /></a>
-       <nav class="d-flex justify-content-center gap-2">
+      <nav class="d-flex justify-content-center ">
         <a href="../../index.html"><button>
             <span>Inicio</span>
           </button></a>
@@ -30,33 +30,33 @@
         <a href="./juguetes.html"><button>
             <span>Juguetes</span>
           </button></a>
-      </nav> 
-      
+      </nav>
+
     </div>
   </header>
 
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item">
-        <img src="../image/pexels-dids-1302290.jpg" class="d-block " alt="uno">
+      <div class="carousel-item d-flex justify-content-center">
+        <img src="../image/pexels-dids-1302290.jpg" class="d-block  " alt="uno">
       </div>
       <div class="carousel-item active">
-        <img src="../image/pexels-krysten-merriman-20787.jpg" class="d-block" alt="perro">
+        <img src="../image/pexels-krysten-merriman-20787.jpg" class="d-block  " alt="perro">
       </div>
       <div class="carousel-item">
-        <img src="../image/Uno.jpg" class="d-block" alt="food">
+        <img src="../image/Uno.jpg" class="d-block  " alt="food">
       </div>
       <div class="carousel-item">
-        <img src="../image/perrosofacarousel.jpg" class="d-block" alt="food">
+        <img src="../image/perrosofacarousel.jpg" class="d-block  " alt="food">
       </div>
       <div class="carousel-item">
-        <img src="../image/pexels-anel-rossouw-2558605.jpg" class="d-block" alt="food">
+        <img src="../image/pexels-anel-rossouw-2558605.jpg" class="d-block  " alt="food">
       </div>
       <div class="carousel-item">
-        <img src="../image/Tres.jpg" class="d-block" alt="food">
+        <img src="../image/Tres.jpg" class="d-block " alt="food">
       </div>
       <div class="carousel-item">
-        <img src="../image/pexels-pixabay-45170.jpg" class="d-block" alt="food">
+        <img src="../image/pexels-pixabay-45170.jpg" class="d-block  " alt="food">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
@@ -74,13 +74,13 @@
   <main class="main1 ">
 
     <div class="d-flex justify-content-center mt-5">
-      <img src="../image/Contacto.png" alt="">
+      <img class="contactologo" src="../image/Contacto.png" alt="">
     </div>
 
 
-    <div class="d-flex justify-content-around align-items-center flex-column">
+    <div class="d-flex justify-content-center align-items-center flex-column">
       <div class="contenedor-formulario">
-        <form class="Formulario">
+        <form class="Formulario" id="formulario-contacto">
           <label class="label" for="nombre">Nombre:</label>
           <input class="input" type="text" id="nombre" name="nombre" required>
 
@@ -88,7 +88,7 @@
           <input class="input" type="text" id="apellido" name="apellido" required>
 
           <label class="label" for="telefono">Telefono:</label>
-          <input class="input" type="number" id="telefono" name="telefono" required>
+          <input class="input" type="number" id="telefono" name="telefono">
 
           <label class="label" for="email">Email:</label>
           <input class="input" type="email" id="email" name="email" required>
@@ -97,26 +97,26 @@
           <input class="input" type="text" id="mascota" name="mascota" required>
 
           <label class="label" for="mensaje">Deja tu comentario:</label>
-          <textarea id="mensaje" name="mensaje" required></textarea>
+          <textarea id="mensaje" name="mensaje"></textarea>
+          <div><h4 class="mensajefinal" id="message-container"></h4></div>
+
           <div class=" d-flex justify-content-center">
-            <button >
+            <button type="submit">
               <span>ENVIAR</span>
             </button>
           </div>
 
-        </form>
       </div>
-
-      
-<div class=" contenedor d-flex  justify-content-center">
-        <!-- <img src="../image/veterinario-removebg-preview.png" alt=""> -->
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.243216152123!2d-58.40377032347668!3d-34.59801085719827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca9158e82c41%3A0xafb5fe117a2c5a52!2sParaguay%202334%2C%20C1121ABL%20CABA!5e0!3m2!1ses-419!2sar!4v1684951308881!5m2!1ses-419!2sar"
-          width="250" height="100" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      </form>
     </div>
 
+
+    <div class="contenedor d-flex  justify-content-center m-0 gap-5"> 
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.243216152123!2d-58.40377032347668!3d-34.59801085719827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca9158e82c41%3A0xafb5fe117a2c5a52!2sParaguay%202334%2C%20C1121ABL%20CABA!5e0!3m2!1ses-419!2sar!4v1684951308881!5m2!1ses-419!2sar"
+        width="250" height="100" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    </div>
 
 
   </main>
@@ -145,6 +145,7 @@
       </svg>
       </svg>
     </div>
+
     <div class="nombres">
       <h5>Joaquin® - Priscila® - Nicolas® - Lesthy® - Natalia®</h5>
     </div>
@@ -155,6 +156,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+  <script src="../../scripts/contacto.js"></script>
 
 </body>
 
