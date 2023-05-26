@@ -6,25 +6,27 @@ const app = createApp({
       allEvents: [],
       jugueteria: [],
       busqueda: "",
-      productosFiltrados: [],
       seleccionadas: [],
+      filtroTitulo: [],
     };
   },
+
   created() {
+    this.seleccionadas = this.getLocalStorage() ?? [];
     fetch("https://mindhub-xj03.onrender.com/api/petshop")
       .then((res) => res.json())
       .then((data) => {
         this.allEvents = data;
-        console.log(this.allEvents);
         this.jugueteria = this.allEvents.filter(
           (fil) => fil.categoria == "jugueteria"
         );
-        console.log(this.jugueteria);
-      });
+      })
+      .catch((error) => console.error(error));
   },
+
   methods: {
     filtrarPorTitulo() {
-      return this.farmacia.filter((e) =>
+      return this.jugueteria.filter((e) =>
         e.producto.toLowerCase().includes(this.busqueda.toLowerCase())
       );
     },
@@ -52,4 +54,5 @@ const app = createApp({
     },
   },
 });
+
 app.mount("#app");

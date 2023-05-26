@@ -2,7 +2,6 @@ function vaciarCampos() {
   document.getElementById("nombre").value = "";
   document.getElementById("email").value = "";
 }
-
 function validarFormulario() {
   const nombre = document.getElementById("nombre").value;
   const email = document.getElementById("email").value;

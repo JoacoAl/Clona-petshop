@@ -32,5 +32,4 @@ const app = createApp({
       .catch((error) => console.log(error));
   },
 });
-
 app.mount("#app");

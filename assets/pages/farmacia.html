@@ -84,49 +84,48 @@
 <div class="d-flex justify-content-center align-items-center m-3">
   <img class="logo-farmacia" src="../image/Farmacia.png" alt="">
 </div>
-  <main id="app" class="main">
-    <form  class="d-flex justify-content-center align-items-center m-3">
-      <input
+<main id="app" class="main">
+  <!-- Search bar -->
+  {{filtrarPorTitulo}}
+  <span class="d-flex justify-content-center my-4 align-items-center">
+    <input
+      v-model="busqueda"
       class="form-control me-2 inputBusqueda"
       type="search"
       placeholder="Buscar"
       aria-label="Search"
-      v-model="busqueda"
-      @input="filtrarPorTitulo"
     />
-    
-      <button class="btn lupa" type="submit">
-        <i class="bi bi-search"></i>
-      </button>
-    </form >
-    <article class="d-flex flex-wrap gap-4 justify-content-center my-3">
-      <div class="card" v-for="articulo of filtrarPorTitulo()">
-      <div class="card__img"><img v-bind:src="articulo.imagen" alt="" /></div>
-      <div class="card__descr-wrapper">
-        <p class="card__title">{{articulo.producto}}</p>
-        <div class="sinStock d-flex justify-content-center" v-if="articulo.disponibles == 0">
-          <p class="m-0 p-1">Sin stock!</p> 
-        </div>
-        <div class="articulo-disponibles d-flex justify-content-center" v-if="articulo.disponibles <= 5 && articulo.disponibles >= 1">
-          <p class="m-0 p-1">Ultimas unidades! </p>
-        </div>
-        <div class="d-flex flex-row justify-content-between card-precio align-items-center">
-          <p class="m-0 card-precio">${{articulo.precio}}</p>
-          <span class="d-flex gap-1"> 
-            <a class="ancor-shop d-flex justify-content-center align-items-center" v-bind:href="'./details.html?id='+articulo._id"><i class="bi bi-plus"></i></a>
-          
-            <div class="ancor-shop d-flex justify-content-center align-items-center" href="" v-if="articulo.disponibles >= 1 & articulo.disponibles != 0">
-              <i :class="seleccionadas.some(e => e._id == articulo._id) ? 'bi bi-shop-window text-primary' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
-            </div>
-          </span>
-        </div>
+    <button class="btn lupa" type="submit">
+      <i class="bi bi-search"></i>
+    </button>
+  </span>
+  <article class="d-flex flex-wrap gap-4 justify-content-center">
+    <div v-if="productosFiltrados.length != 0" class="card" v-for="articulo
+    of productosFiltrados">
+    <div class="card__img">
+      <div class="sinStock d-flex justify-content-center" v-if="articulo.disponibles == 0">
+        <p class="m-0 p-1">Sin stock!</p> 
+      </div>
+      <div class="articulo-disponibles d-flex justify-content-center" v-if="articulo.disponibles <= 5 && articulo.disponibles >= 1">
+        <p class="m-0 p-1">Ultimas unidades! </p>
+      </div>
+      <img v-bind:src="articulo.imagen" alt="" /></div>
+    <div class="card__descr-wrapper">
+      <p class="card__title">{{articulo.producto}}</p>
+      <div class="d-flex flex-row justify-content-between card-precio align-items-center">
+        <p class="m-0">${{articulo.precio}}</p>
+        <span class="d-flex gap-1"> 
+          <a class="ancor-shop d-flex justify-content-center align-items-center" v-bind:href="'./details.html?id='+articulo._id"><i class="bi bi-plus"></i></a>
+        <div class="ancor-shop d-flex justify-content-center align-items-center" href="" v-if="articulo.disponibles >= 1 & articulo.disponibles != 0">
+          <i :class="seleccionadas.some(e => e._id == articulo._id) ? 'bi bi-shop-window text-primary' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
+        </div></span>
       </div>
     </div>
-    </article>
-    <div class="d-flex justify-content-center">
-      <h3 v-if="filtrarPorTitulo().length == 0" class="h3-no-hay-resultados">No hay resultados a tu busqueda</h3>
-    </div>
-  </main>
+  </article>
+  <div class="d-flex justify-content-center">
+    <h3 v-if="productosFiltrados.length == 0" class="h3-no-hay-resultados">No hay resultados a tu busqueda</h3>
+  </div>
+</main>
   <footer class="footer d-flex align-items-center justify-content-between px-5">
     <div class="redesSociales">
       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
