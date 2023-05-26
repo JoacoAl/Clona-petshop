@@ -4,9 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-
     messageContainer.textContent = "Mensaje enviado con éxito ";
-
     form.reset();
   });
 });
