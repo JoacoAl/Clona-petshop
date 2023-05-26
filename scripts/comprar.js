@@ -61,7 +61,6 @@ window.onclick = function (e) {
 };
 
 /* PARA FUNCION DEL BOTON COMPRAR */
-
 document.getElementById("confirm-btn").addEventListener("click", function () {
   let cardNumber = document.getElementById("card-number").value;
   let cardHolder = document.getElementById("card-holder").value;
