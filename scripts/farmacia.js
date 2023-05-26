@@ -24,7 +24,6 @@ const app = createApp({
       .catch((error) => console.error(error));
   },
 
-
   methods: {
     filtrarPorTitulo() {
       return this.farmacia.filter((e) =>
@@ -38,18 +37,10 @@ const app = createApp({
       } else {
         const aux = this.allEvents.find((e) => e._id == _id);
         this.seleccionadas.push(aux);
-    toggleSeleccion(_id) {
-      if (this.seleccionadas.find((e) => e._id == _id)) {
-        console.log("ya");
-        this.seleccionadas = this.seleccionadas.filter((e) => e._id != _id);
-      } else {
-        const aux = this.allEvents.find((e) => e._id == _id);
-        this.seleccionadas.push(aux);
       }
       const json = JSON.stringify(this.seleccionadas);
       localStorage.setItem("compras", json);
     },
-
     getLocalStorage() {
       return JSON.parse(localStorage.getItem("compras"));
     },
@@ -64,4 +55,3 @@ const app = createApp({
 });
 
 app.mount("#app");
-

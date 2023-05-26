@@ -23,7 +23,6 @@ const app = createApp({
       })
       .catch((error) => console.error(error));
   },
-
   methods: {
     filtrarPorTitulo() {
       return this.jugueteria.filter((e) =>
