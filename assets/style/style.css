@@ -346,6 +346,7 @@ iframe {
 .input {
   margin-top: 0.5rem;
   border-radius: 10px;
+  padding-left: 1rem;
   width: 30rem;
 }
 
