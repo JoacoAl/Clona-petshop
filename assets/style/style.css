@@ -41,12 +41,14 @@ body {
 }
 
 .main {
-  min-height: 80vh !important;
+  min-height: 50vh;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
 }
-
+.article {
+  min-height: 50vh !important;
+}
 .inputBusqueda {
   height: 2.5rem;
   width: 30rem;
@@ -491,6 +493,9 @@ textarea {
     .logo-jugueteria > img {
       width: 320px !important;
     }
+    .logo-farmacia {
+      width: 320px !important;
+    }
     footer {
       display: flex;
       flex-direction: column;
@@ -504,6 +509,16 @@ textarea {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    .logo-carrito {
+      width: 320px !important;
+    }
+    .div-logo-carrito {
+      display: flex;
+      justify-content: center;
+    }
+    .div-comprar-btn {
+      width: 320px;
     }
   }
 }

@@ -37,9 +37,8 @@
           ></a>
         </div>
       </header>
-      <div class="logo-farmacia d-flex justify-content-center align-items-center m-3">
-        <img src="../image/Carrito.png" alt="">
-    
+      <div class="div-logo-carrito d-flex justify-content-center align-items-center m-3">
+        <img class="logo-carrito" src="../image/Carrito.png" alt="">
     </div>
       <main id="app" class="d-flex align-items-center main-carrito flex-column justify-content-between">
         <article class="d-flex flex-wrap gap-4 justify-content-center">
@@ -68,25 +67,20 @@
             </div>
           </div>
         </article>
-       
-                <div v-if="mostrarImagen && imagenBorrar == false">
-        <img class="imagenes-carrito" src="../image/compra-exitosa.png" alt="">
-       </div>
-       <div class="my-3 h2-carrito" v-if="seleccionadas == 0 && mostrarImagen == false && imagenBorrar == false">
+      <div class="my-3 h2-carrito" v-if="seleccionadas == 0 && mostrarImagen == false && imagenBorrar == false">
         <h2>¡Aun no has seleccionado ningun producto!</h2>
       </div>
       <div v-if="imagenBorrar && mostrarImagen == false">
         <img class="imagenes-carrito" src="/assets/image/cancelada.webp" alt="">
-       </div>
+      </div>
        {{resultado}}
        <div>
-         <h2 v-if="imagenBorrar == false" class="h2-carrito">Total a pagar: ${{totalCompra}}</h2>
+        <h2  v-if="imagenBorrar == false" class="h2-carrito">Total a pagar: ${{totalCompra}}</h2>
        </div>
      <div class="div-comprar-btn d-flex" >
       <button v-if="seleccionadas && !(seleccionadas == 0 && mostrarImagen == false && imagenBorrar == false)" v-on:click="deleteCompras" class="comprar-btn">BORRAR</button>
-      <a class="btn-carrito" href="./comprar.html"><button v-if="seleccionadas && !(seleccionadas == 0 && mostrarImagen == false && imagenBorrar == false)" v-on:click="comprar" class="comprar-btn">COMPRAR</button></a>
+      <a class="btn-carrito" href="./comprar.html"><button class="comprar-btn">COMPRAR</button></a>
      </div>
-
       </main>
     <footer class="d-flex justify-content-between">
       <div class="redesSociales">

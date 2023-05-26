@@ -3,15 +3,21 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      seleccionadas: [],
       totalCompra: null,
     };
   },
   created() {
     this.totalCompra = JSON.parse(localStorage.getItem("resultado"));
   },
+  methods: {
+    deleteCompras() {
+      localStorage.removeItem("compras");
+      this.seleccionadas = [];
+    },
+  },
 });
 app.mount("#app");
-
 let cardDrop = document.getElementById("card-dropdown");
 let activeDropdown;
 cardDrop.addEventListener("click", function () {
@@ -25,9 +31,6 @@ cardDrop.addEventListener("click", function () {
 });
 
 window.onclick = function (e) {
-  console.log(e.target.tagName);
-  console.log("dropdown");
-  console.log(activeDropdown);
   if (e.target.tagName === "LI" && activeDropdown) {
     if (e.target.innerHTML === "Master Card") {
       document.getElementById("credit-card-image").src =
