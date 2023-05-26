@@ -15,6 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../style/style.css" />
+    <link rel="shortcut icon" href="../image/favicon1.png" type="image/x-icon">
     <title>Clona PetShop | Jugueteria</title>
   </head>
   <body>
@@ -47,7 +48,7 @@
         </nav>
         <a
           class="ancor-carrito d-flex justify-content-center"
-          href="./details.html"
+          href="./carrito.html"
         >
           <i class="bi bi-cart4 carro"></i
         ></a>
@@ -103,10 +104,10 @@
     </div>
     <!-- Logo jugueteria -->
     <div class="logo-jugueteria d-flex justify-content-center my-3">
-      <img src="../image/Jugueteria.png" alt="" />
+      <img src="../image/Jugueterialogo.jpg" alt="" />
     </div>
 
-    <main id="app">
+    <main id="app" class="main">
       <!-- Search bar -->
       {{filtrarPorTitulo}}
       <span class="d-flex justify-content-center my-4 align-items-center">
@@ -137,45 +138,42 @@
           <div class="d-flex flex-row justify-content-between card-precio align-items-center">
             <p class="m-0">${{articulo.precio}}</p>
             <span class="d-flex gap-1"> 
-              <a class="ancor-shop d-flex justify-content-center align-items-center" href="./details.html"><i class="bi bi-plus"></i></a>
-              <a
-              class="ancor-shop d-flex justify-content-center align-items-center"
-              href=""
-            >
-              <i class="bi bi-shop-window"></i>
-            </a></span>
+              <a class="ancor-shop d-flex justify-content-center align-items-center" v-bind:href="'./details.html?id='+articulo._id"><i class="bi bi-plus"></i></a>
+            <div class="ancor-shop d-flex justify-content-center align-items-center" href="" v-if="articulo.disponibles >= 1 & articulo.disponibles != 0">
+              <i :class="seleccionadas.some(e => e._id == articulo._id) ? 'bi bi-shop-window text-primary' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
+            </div></span>
           </div>
         </div>
       </article>
       <div class="d-flex justify-content-center">
         <h3 v-if="productosFiltrados.length == 0" class="h3-no-hay-resultados">No hay resultados a tu busqueda</h3>
       </div>
-      <footer class="footer d-flex align-items-center justify-content-between px-5">
-        <div class="redesSociales">
-          <a href="https://www.instagram.com"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
-            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-            <path d="M16.5 7.5l0 .01" />
-          </svg></a>
-        <a href="https://www.facebook.com/home.php"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
-        </svg></a>
-          <a href="https://web.whatsapp.com"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-            <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
-          </svg></a>
-        </div>
-        <div class="nombres">
-          <h5>Joaquin® - Priscila® - Nicolas® - Lesthy® - Natalia®</h5>
-      </div>
-        <div class="cohort px-4 text-center">
-            <h3 class="text">Cohort 47</h3>
-        </div>
-      </footer>
     </main>
+    <footer class="footer d-flex align-items-center justify-content-between px-5 align-items-end">
+      <div class="redesSociales">
+        <a href="https://www.instagram.com"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+          <path d="M16.5 7.5l0 .01" />
+        </svg></a>
+      <a href="https://www.facebook.com/home.php"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+      </svg></a>
+        <a href="https://web.whatsapp.com"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+        </svg></a>
+      </div>
+      <div class="nombres">
+        <h5>Joaquin® - Priscila® - Nicolas® - Natalia®</h5>
+    </div>
+      <div class="cohort px-4 text-center">
+          <h3 class="text">Cohort 47</h3>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

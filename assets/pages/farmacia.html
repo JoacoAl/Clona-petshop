@@ -16,12 +16,12 @@
     />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="shortcut icon" href="../image/favicon1.png" type="image/x-icon">
-    <title>farmacia</title>
+    <title>Clona PetShop | Farmacia</title>
   </head>
   <body>
 <div class="layout" >
   <header class="p-2">
-    <div class="d-flex justify-content-around align-items-center">
+    <div class="d-flex justify-content-around align-items-center div-header">
       <a class="ancor-logo" href=""
         ><img src="../image/logo2.png" alt="" class="img-header"
       /></a>
@@ -81,10 +81,10 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<div class="logo-farmacia d-flex justify-content-center align-items-center m-3">
-  <img  src="../image/Farmacia.png" alt="">
+<div class="d-flex justify-content-center align-items-center m-3">
+  <img class="logo-farmacia" src="../image/Farmacia.png" alt="">
 </div>
-  <main id="app">
+  <main id="app" class="main">
     <form  class="d-flex justify-content-center align-items-center m-3">
       <input
       class="form-control me-2 inputBusqueda"
@@ -113,10 +113,10 @@
         <div class="d-flex flex-row justify-content-between card-precio align-items-center">
           <p class="m-0 card-precio">${{articulo.precio}}</p>
           <span class="d-flex gap-1"> 
-            <a class="ancor-shop d-flex justify-content-center align-items-center" href="./details.html"><i class="bi bi-plus"></i></a>
+            <a class="ancor-shop d-flex justify-content-center align-items-center" v-bind:href="'./details.html?id='+articulo._id"><i class="bi bi-plus"></i></a>
           
             <div class="ancor-shop d-flex justify-content-center align-items-center" href="" v-if="articulo.disponibles >= 1 & articulo.disponibles != 0">
-              <i :class="seleccionadas.some(e => e._id == allEvents._id) ? 'bi bi-shop-window bg-danger' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
+              <i :class="seleccionadas.some(e => e._id == articulo._id) ? 'bi bi-shop-window text-primary' : 'bi bi-shop-window'" role="button" @click="toggleSeleccion(articulo._id)"></i>
             </div>
           </span>
         </div>
@@ -147,7 +147,7 @@
       </svg>
     </div>
     <div class="nombres">
-      <h5>Joaquin® - Priscila® - Nicolas® - Lesthy® - Natalia®</h5>
+      <h5>Joaquin® - Priscila® - Nicolas® - Natalia®</h5>
   </div>
     <div class="cohort px-4 text-center">
         <h3 class="text">Cohort 47</h3>
