@@ -8,7 +8,6 @@ const app = createApp({
       detail: [],
     };
   },
-
   created() {
     const url = "https://mindhub-xj03.onrender.com/api/petshop";
     fetch(url)

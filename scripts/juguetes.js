@@ -41,7 +41,6 @@ const app = createApp({
       const json = JSON.stringify(this.seleccionadas);
       localStorage.setItem("compras", json);
     },
-
     getLocalStorage() {
       return JSON.parse(localStorage.getItem("compras"));
     },
