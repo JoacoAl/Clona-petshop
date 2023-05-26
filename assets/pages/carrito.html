@@ -74,9 +74,7 @@
           <h2>total a pagar: ${{totalCompra}}</h2>
         </div>
         
-      <div v-if="mostrarImagen && imagenBorrar == false">
-        <img class="imagenes-carrito" src="../image/compra-exitosa.png" alt="">
-       </div>
+
        <div class="my-3 h2-carrito" v-if="seleccionadas == 0 && mostrarImagen == false && imagenBorrar == false">
         <h2>¡Aun no has seleccionado ningun producto!</h2>
       </div>
@@ -85,7 +83,8 @@
        </div>
      <div class="div-comprar-btn d-flex" >
       <button v-on:click="deleteCompras" v-if="seleccionadas && !(seleccionadas == 0 && mostrarImagen == false && imagenBorrar == false)" class="comprar-btn">BORRAR</button>
-      <button v-on:click="comprar" class="comprar-btn">COMPRAR</button>
+      <button  class="comprar-btn"><a href="./compras.html">compras</a></button>
+      
      </div>
       </main>
       
